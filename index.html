@@ -4,64 +4,88 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#10251e">
-  <meta name="description" content="EasyBet prépare un service assisté de dépôt et retrait 1xBet par WhatsApp et Mobile Money au Burkina Faso.">
-  <title>EasyBet — Votre agence, sur WhatsApp</title>
+  <meta name="description" content="EasyBet aide les gérants d’agence au Burkina Faso à organiser les demandes 1xBet sur WhatsApp et à suivre séparément paiement Mobile Money et opération MobCash.">
+  <meta property="og:locale" content="fr_BF">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="EasyBet — Un suivi plus clair pour votre agence">
+  <meta property="og:description" content="Organisez les demandes 1xBet reçues sur WhatsApp et suivez chaque étape de paiement et MobCash.">
+  <link rel="canonical" href="https://abdouldotdev.github.io/easybet-site/">
+  <title>EasyBet — Un suivi plus clair pour votre agence</title>
   <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
   <header class="topbar wrap">
-    <a class="brand" href="./" aria-label="EasyBet, accueil"><span class="brand-mark">e</span> easybet</a>
+    <a class="brand brand-image" href="./"><img src="assets/easybet-logo.png" width="2172" height="724" alt="EasyBet"></a>
     <nav aria-label="Navigation principale">
-      <a href="#fonctionnement">Fonctionnement</a>
-      <a href="#securite">Sécurité</a>
-      <a class="nav-cta" href="#pilote">État du pilote <span aria-hidden="true">↗</span></a>
+      <a href="#parcours">Le parcours</a>
+      <a href="#suivi">Suivi agence</a>
+      <a class="nav-cta" href="#parcours">Voir comment ça marche <span aria-hidden="true">↘</span></a>
     </nav>
   </header>
 
-  <main>
-    <section class="hero wrap">
+  <main id="contenu">
+    <section class="hero wrap" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <p class="eyebrow"><span class="pulse"></span> CONÇU POUR LES AGENCES AU BURKINA FASO</p>
-        <h1>Vos opérations 1xBet.<br><em>Un échange simple.</em></h1>
-        <p class="lede">EasyBet prépare un parcours assisté par WhatsApp pour les demandes de dépôt et de retrait 1xBet, avec paiement Mobile Money traité par l’agence.</p>
-        <a class="button" href="#pilote">Découvrir le pilote <span aria-hidden="true">↓</span></a>
-        <p class="hero-note">Le service n’est pas encore ouvert au public.</p>
+        <p class="eyebrow"><span class="pulse" aria-hidden="true"></span> Pour les gérants d’agence au Burkina Faso</p>
+        <h1 id="hero-title">Chaque demande suivie.<br>Chaque étape plus claire.</h1>
+        <p class="lede">EasyBet organise les demandes 1xBet reçues sur le WhatsApp de votre agence. Le client confirme son identifiant et son numéro de paiement ; vous suivez le paiement Mobile Money et l’opération MobCash avec leurs états et leurs preuves.</p>
+        <a class="button" href="#parcours">Découvrir le parcours <span aria-hidden="true">↓</span></a>
       </div>
-      <div class="phone-stage" aria-label="Illustration d'une conversation WhatsApp EasyBet">
+      <div class="phone-stage" aria-hidden="true">
         <div class="orb orb-one"></div><div class="orb orb-two"></div>
         <div class="phone">
           <div class="phone-top"><span>9:41</span><span>● ● ●</span></div>
-          <div class="chat-head"><span class="avatar">e</span><span><b>Votre agence</b><small>EasyBet · WhatsApp</small></span><span class="dots">•••</span></div>
+          <div class="chat-head"><span class="avatar">e</span><span><b>Votre agence</b><small>WhatsApp</small></span><span class="dots">•••</span></div>
           <div class="chat-body">
-            <div class="day">AUJOURD’HUI</div>
-            <div class="bubble incoming">Bonjour 👋 Que souhaitez-vous faire ?<small>09:41</small></div>
-            <div class="bubble outgoing">Faire un dépôt 1xBet<small>09:42 ✓✓</small></div>
-            <div class="bubble incoming">Confirmez votre ID 1xBet et votre numéro de paiement avant de continuer.<small>09:42</small></div>
-            <div class="status-card"><span class="status-icon">···</span><span><b>Traitement assisté</b><small>Confirmation requise à chaque étape</small></span></div>
+            <div class="day">Aujourd’hui</div>
+            <div class="bubble incoming">Bonjour, je souhaite faire un dépôt 1xBet.<small>09:41</small></div>
+            <div class="bubble outgoing">Confirmez votre ID et votre numéro Orange Money.<small>09:42 ✓✓</small></div>
+            <div class="bubble incoming">Voici le récapitulatif à vérifier avant de continuer.<small>09:42</small></div>
+            <div class="status-card"><span class="status-icon">✓</span><span><b>Paiement à vérifier</b><small>État et preuve de l’opération</small></span></div>
           </div>
           <div class="chat-input"><span>Écrire un message</span><span class="send">↑</span></div>
         </div>
-        <div class="float-tag"><span>●</span> Une agence à chaque étape</div>
+        <div class="float-tag"><span>●</span> Une demande, un suivi</div>
       </div>
-      <div class="hero-index"><span>01</span><span class="index-line"></span><span>03</span></div>
+      <div class="hero-index" aria-hidden="true"><span>01</span><span class="index-line"></span><span>03</span></div>
     </section>
 
-    <section class="trust-strip"><div class="wrap trust-inner"><span>UN PARCOURS PENSÉ POUR</span><b>WhatsApp</b><i></i><b>Mobile Money</b><i></i><b>MobCash 1xBet</b></div></section>
+    <section class="trust-strip" aria-label="Parcours EasyBet"><div class="wrap trust-inner"><span>LE PARCOURS RÉUNIT</span><b>WhatsApp</b><i aria-hidden="true"></i><b>Mobile Money</b><i aria-hidden="true"></i><b>MobCash 1xBet</b></div></section>
 
-    <section class="section wrap" id="fonctionnement">
-      <div class="section-heading"><p class="eyebrow">SIMPLE, AVEC UN SUIVI CLAIR</p><h2>De la demande<br>à la confirmation.</h2></div>
+    <section class="section wrap" id="parcours" aria-labelledby="parcours-title">
+      <div class="section-heading"><div><p class="eyebrow">Un fil de suivi, de bout en bout</p><h2 id="parcours-title">Du premier message<br>à l’état vérifié.</h2></div><p class="section-intro">Avant un match, les demandes peuvent arriver en même temps. Un récapitulatif, une référence et un état par étape donnent à l’agence des repères pour vérifier la bonne opération et traiter les écarts.</p></div>
       <div class="steps">
-        <article><span class="step-no">01</span><div class="step-icon">↗</div><h3>Écrivez à votre agence</h3><p>La conversation WhatsApp est rattachée au numéro de l’agence que vous contactez.</p></article>
-        <article><span class="step-no">02</span><div class="step-icon">⌕</div><h3>Vérifiez les détails</h3><p>Votre ID 1xBet, le numéro Mobile Money et le montant sont récapitulés avant confirmation.</p></article>
-        <article><span class="step-no">03</span><div class="step-icon">✓</div><h3>Suivez l’opération</h3><p>L’agence traite les étapes et vous communique un état après vérification des preuves disponibles.</p></article>
+        <article><span class="step-no">01</span><div class="step-icon" aria-hidden="true">↗</div><h3>La demande est cadrée</h3><p>Le client confirme son ID 1xBet, son numéro Mobile Money et le montant avant de poursuivre.</p></article>
+        <article><span class="step-no">02</span><div class="step-icon" aria-hidden="true">⌕</div><h3>Le paiement est suivi</h3><p>L’agence consulte l’état du paiement et les éléments disponibles pour rapprocher la demande.</p></article>
+        <article><span class="step-no">03</span><div class="step-icon" aria-hidden="true">✓</div><h3>MobCash a son propre état</h3><p>L’opération 1xBet est suivie séparément. En cas d’incertitude, l’agence vérifie avant toute suite.</p></article>
       </div>
     </section>
 
-    <section class="feature-band" id="securite"><div class="wrap feature-grid"><div><p class="eyebrow">DES RÈGLES VISIBLES</p><h2>Chaque étape<br>a son état.</h2></div><div class="feature-copy"><p>Le paiement Mobile Money et l’opération MobCash sont suivis séparément. Une situation incertaine est transmise à l’agence pour vérification, sans annoncer un succès non confirmé.</p><div class="feature-points"><span><b>01</b> Détails confirmés avant action</span><span><b>02</b> Suivi distinct des deux étapes</span><span><b>03</b> Traitement humain si nécessaire</span></div></div><div class="feature-graphic" aria-hidden="true"><div class="ring ring-a"></div><div class="ring ring-b"></div><div class="ring ring-c"></div><div class="graphic-core">e</div><span class="graphic-label label-top">PAIEMENT</span><span class="graphic-label label-bottom">MOB CASH</span></div></div></section>
+    <section class="agency-friction wrap" aria-labelledby="friction-title">
+      <div class="section-heading"><div><p class="eyebrow">Pensé pour le rythme de l’agence</p><h2 id="friction-title">Des repères quand<br>la file s’accélère.</h2></div><p class="section-intro">EasyBet structure le suivi autour des points où une demande se perd facilement : les ressaisies, l’affluence, les erreurs de détail et le rapprochement des opérations.</p></div>
+      <div class="friction-grid">
+        <article><span class="friction-index">01</span><h3>Gestes répétés</h3><p>Le récapitulatif conserve le contexte saisi par le client tout au long de la demande.</p></article>
+        <article><span class="friction-index">02</span><h3>File avant match</h3><p>La vue agence prévue distingue les demandes à traiter, en cours et à vérifier.</p></article>
+        <article><span class="friction-index">03</span><h3>Erreurs de saisie</h3><p>L’ID 1xBet, le numéro Mobile Money et le montant sont regroupés pour confirmation.</p></article>
+        <article><span class="friction-index">04</span><h3>Vols ou écarts à contrôler</h3><p>Références et preuves liées à la demande donnent au gérant des éléments de contrôle et de rapprochement.</p></article>
+      </div>
+    </section>
 
-    <section class="pilot wrap" id="pilote"><div class="pilot-card"><div><p class="eyebrow">PILOTE EN PRÉPARATION</p><h2>Le service n’est pas encore ouvert.</h2><p>EasyBet est en cours de préparation et de validation avec des agences partenaires. Aucun dépôt ou retrait réel ne peut être demandé via ce site.</p></div><div class="pilot-stamp"><span>BF</span><small>BURKINA<br>FASO</small></div></div></section>
+    <section class="feature-band" id="securite" aria-labelledby="securite-title"><div class="wrap feature-grid"><div><p class="eyebrow">Deux étapes, deux états</p><h2 id="securite-title">Le paiement et MobCash<br>gardent leurs preuves.</h2></div><div class="feature-copy"><p>Les informations confirmées, les références de la demande et les étapes de paiement et MobCash restent liées. Une situation incertaine passe par une vérification de l’agence, qui peut intervenir manuellement si nécessaire.</p><div class="feature-points"><span><b>01</b> Les détails sont confirmés avant l’action</span><span><b>02</b> Les étapes restent distinctes et traçables</span><span><b>03</b> Un résultat incertain demande vérification</span></div></div><div class="feature-graphic" aria-hidden="true"><div class="ring ring-a"></div><div class="ring ring-b"></div><div class="ring ring-c"></div><div class="graphic-core">e</div><span class="graphic-label label-top">PAIEMENT</span><span class="graphic-label label-bottom">MOBCASH</span></div></div></section>
+
+    <section class="agency-view wrap" id="suivi" aria-labelledby="suivi-title">
+      <div class="agency-copy"><p class="eyebrow">Pour garder la journée en vue</p><h2 id="suivi-title">Les demandes du jour,<br>au même endroit.</h2><p>La vue agence prévue rassemble les demandes, leur montant, l’étape atteinte et les opérations à vérifier. Le gérant voit ce qui avance et ce qui demande son attention, sans confondre paiement Mobile Money et opération 1xBet.</p></div>
+      <div class="queue" aria-label="Exemple illustratif de suivi agence">
+        <div class="queue-head"><span>Suivi des demandes</span><span class="queue-date">Aujourd’hui</span></div>
+        <div class="queue-row"><span class="queue-dot green"></span><span class="queue-name"><b>Dépôt · ··4821</b><small>Paiement confirmé</small></span><span class="queue-status">À traiter</span></div>
+        <div class="queue-row"><span class="queue-dot amber"></span><span class="queue-name"><b>Retrait · ··1064</b><small>Preuve à vérifier</small></span><span class="queue-status">En revue</span></div>
+        <div class="queue-row"><span class="queue-dot green"></span><span class="queue-name"><b>Dépôt · ··9035</b><small>Opération confirmée</small></span><span class="queue-status">Terminé</span></div>
+        <p class="queue-caption">Aperçu illustratif · données fictives</p>
+      </div>
+    </section>
   </main>
 
-  <footer class="footer"><div class="wrap footer-top"><a class="brand" href="./"><span class="brand-mark">e</span> easybet</a><p>Un parcours assisté, au rythme de votre agence.</p><nav aria-label="Liens légaux"><a href="terms/">Conditions d’utilisation</a><a href="privacy/">Confidentialité</a></nav></div><div class="wrap footer-bottom"><span>© 2026 EasyBet · Burkina Faso</span><span>Service en préparation</span></div></footer>
+  <footer class="footer"><div class="wrap footer-top"><a class="brand footer-brand" href="./">easybet</a><p>Un suivi plus clair pour les opérations de votre agence.</p><nav aria-label="Informations légales"><a href="terms/">Conditions d’utilisation</a><a href="privacy/">Confidentialité</a></nav></div><div class="wrap footer-bottom"><span>© 2026 EasyBet · Burkina Faso</span><span>WhatsApp · Mobile Money · MobCash 1xBet</span></div></footer>
 </body>
 </html>
