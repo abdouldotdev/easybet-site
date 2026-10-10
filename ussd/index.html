@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10251e">
+  <meta name="robots" content="noindex">
+  <meta name="referrer" content="no-referrer">
+  <title>Composer le code — EasyBet</title>
+  <link rel="stylesheet" href="../assets/site.css">
+  <style>
+    .ussd{max-width:460px;margin:auto;padding:32px 0 56px;display:flex;flex-direction:column;gap:18px}
+    .ussd h1{font:700 30px/1.15 var(--display);letter-spacing:-.03em;margin:0}
+    .ussd p{margin:0;font-size:15px;line-height:1.6;color:#4f5d55}
+    .ussd-code{font:700 22px var(--mono);color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:6px;padding:18px 16px;text-align:center;word-break:break-all;user-select:all;-webkit-user-select:all}
+    .ussd-actions{display:grid;gap:10px}
+    .ussd-actions a,.ussd-actions button{min-height:52px;display:flex;align-items:center;justify-content:center;border-radius:6px;font:650 16px var(--body);cursor:pointer}
+    .ussd-dial{background:var(--ink);color:#fff}
+    .ussd-copy{background:#fff;color:var(--ink);border:1px solid #b9c5bb}
+    .ussd-copy:focus-visible,.ussd-dial:focus-visible{outline:3px solid #699f44;outline-offset:3px}
+    .ussd-status{min-height:22px;font-size:14px;color:var(--green)}
+    .ussd-steps{margin:0;padding-left:20px;font-size:14px;line-height:1.7;color:#4f5d55}
+    .ussd-error{padding:16px;border-left:3px solid #c7782d;background:#fbf3e9;font-size:14px;line-height:1.6;color:#5d4422}
+  </style>
+</head>
+<body>
+  <main class="ussd wrap">
+    <img src="../assets/easybet-logo.png" width="2172" height="724" alt="EasyBet" style="width:120px;height:auto">
+    <section id="ready" hidden>
+      <div style="display:flex;flex-direction:column;gap:18px">
+        <h1>Composez le code de paiement</h1>
+        <p>Touchez « Composer » : votre téléphone ouvre l’application d’appel avec le code déjà saisi. Appelez, puis suivez les étapes de votre opérateur.</p>
+        <div class="ussd-code" id="code" aria-label="Code à composer"></div>
+        <div class="ussd-actions">
+          <a class="ussd-dial" id="dial" href="#">Composer</a>
+          <button class="ussd-copy" id="copy" type="button">Copier le code</button>
+        </div>
+        <p class="ussd-status" id="status" role="status" aria-live="polite"></p>
+        <ol class="ussd-steps">
+          <li>Sur iPhone, ou si rien ne s’ouvre : copiez le code, ouvrez Téléphone, collez-le et appelez.</li>
+          <li>Ne communiquez jamais votre code secret : vous le tapez seulement sur votre téléphone.</li>
+          <li>Revenez ensuite dans WhatsApp : la confirmation du dépôt y arrive.</li>
+        </ol>
+      </div>
+    </section>
+    <section id="invalid" hidden>
+      <div class="ussd-error">Ce lien n’est pas valide. Revenez dans la conversation WhatsApp et utilisez le code affiché dans le message.</div>
+    </section>
+  </main>
+  <script>
+    (function () {
+      // Same shape the backend accepts from Ganipay: digits, * and +, ending with #.
+      var code = new URLSearchParams(location.search).get("c") || "";
+      if (!/^\*[0-9*+]{1,160}#$/.test(code)) {
+        document.getElementById("invalid").hidden = false;
+        return;
+      }
+      document.getElementById("ready").hidden = false;
+      document.getElementById("code").textContent = code;
+      // "#" ends a URL: the dialer only receives it percent-encoded.
+      document.getElementById("dial").href = "tel:" + code.replace(/#/g, "%23");
+      var status = document.getElementById("status");
+      document.getElementById("copy").addEventListener("click", function () {
+        function done() { status.textContent = "Code copié. Collez-le dans Téléphone puis appelez."; }
+        function fallback() {
+          var range = document.createRange();
+          range.selectNodeContents(document.getElementById("code"));
+          var selection = window.getSelection();
+          selection.removeAllRanges();
+          selection.addRange(range);
+          try {
+            if (document.execCommand("copy")) return done();
+          } catch (e) {}
+          status.textContent = "Le code est sélectionné : appuyez longuement dessus puis « Copier ».";
+        }
+        if (navigator.clipboard && window.isSecureContext) {
+          navigator.clipboard.writeText(code).then(done, fallback);
+        } else {
+          fallback();
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
